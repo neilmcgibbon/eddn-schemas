@@ -64,8 +64,8 @@ func Decode(raw []byte) (*Envelope, error) {
 	// Cast the envelope data property to be the type of the schema/structure
 	envelope.Data = reflect.New(t).Interface().(Data)
 
-	// If the data property of envelop is nil, then we (for some reason) don't have the
-	// strcut types to handle this. This should never happen as test in the schema register
+	// If the data property of envelope is nil, then we (for some reason) don't have the
+	// struct types to handle this. This should never happen as test in the schema register
 	// (above) before we get here
 	if envelope.Data == nil {
 		// @todo we might want to return an acrual error here
